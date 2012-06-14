@@ -246,7 +246,7 @@ int main(int argc, char **argv)
    int     getpid();
    long     now;
    char buffer[2048];
-   int pos, lastword;
+   int pos;
 
 
    now = time(&now) / random();
@@ -260,7 +260,7 @@ int main(int argc, char **argv)
 	pos++;
       }
       buffer[pos] = ' ';
-      lastword = pos++;
+      pos++;
    }
    buffer[pos] = '\0';
 
