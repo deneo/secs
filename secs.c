@@ -36,7 +36,7 @@ static char     *said[] = {
         "stammered",            "wheezed",              "squealed",
         "whimpered",            "salivated",            "tongued",
         "cried",                "screamed",             "yelled",
-        "said",
+        "said",			"gurgled",
 };
 
 static char     *the[] = {
