@@ -1,16 +1,10 @@
-# Make sex
+# Make sex I've no idea if this works in anything except linux
+# For all I know it might not even work in some distros
 
 PROG = secs
 INSTALLPREFIX = /usr/local/bin/
-#BINDIR=${PREFIX}/bin
 MANDIR = /usr/share/man/man6/
 MAN6 = secs.6.gz
-
-#.include <bsd.prog.mk>
-
-# Added by Jan
-# Who has no idea what he's doing...
-
 SRC = secs.c
 CC = cc 
 CFLAGS = -Wall -g

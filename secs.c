@@ -1,13 +1,24 @@
 /*sex.c*/
 
-/* Original author unknown.  Presumably this is public domain by now.
- * 
- */
-
+/*
+* 
+*	 Copyright (C) 2012 Jan Brennen <jan@janpaal.com>
+* 
+* Everyone is permitted to copy and distribute verbatim or modified
+* copies of this license document, and changing it is allowed as long
+* as the name is changed.
+*
+*           DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE
+*  TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
+* 
+*  	0. You just DO WHAT THE FUCK YOU WANT TO.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <ctype.h>
+#include <unistd.h>
+
 
 static char     *faster[] = {
   "\"Let the games begin!\"",             "\"Sweet Jesus!\"",
@@ -223,48 +234,40 @@ struct table {
 };
 
 typedef struct table    TABLE;
-#define SZ(a)           sizeof(a) / sizeof(char *)
-
+#define C(a) {a, sizeof(a) / sizeof(char *)}
+#define END {0, 0}
 TABLE   list[] = {
-        {faster,         SZ(faster)},     {said,           SZ(said)},
-        {the,            SZ(the)},        {fadj,           SZ(fadj)},
-        {female,         SZ(female)},     {asthe,          SZ(asthe)},
-        {madjec,         SZ(madjec)},     {male,           SZ(male)},
-        {diddled,        SZ(diddled)},    {her,            SZ(her)},
-        {titadj,         SZ(titadj)},     {knockers,       SZ(knockers)},
-        {and,            SZ(and)},        {thrust,         SZ(thrust)},
-        {his,            SZ(his)},        {dongadj,        SZ(dongadj)},
-        {dong,           SZ(dong)},       {intoher,        SZ(intoher)},
-        {twatadj,        SZ(twatadj)},    {twat,           SZ(twat)},
-        {(char **)NULL,  (int)NULL},
+        C(faster),     C(said),
+        C(the),        C(fadj),
+        C(female),     C(asthe),
+        C(madjec),     C(male),
+        C(diddled),    C(her),
+        C(titadj),     C(knockers),
+        C(and),        C(thrust),
+        C(his),        C(dongadj),
+        C(dong),       C(intoher),
+        C(twatadj),    C(twat),
+	END
 };
 
-int main(int argc, char **argv)
+int main(int argc, char *argv[])
 {
    register TABLE  *ttp;
    register char   *cp;
    int     getpid();
    long     now;
-   char buffer[2048];
-   int pos;
 
 
    now = time(&now) / random();
    srandom(getpid() + (int)((now >> 16) + now + time(&now)));
 
-   pos = 0;
    for (ttp = list;ttp->item;++ttp) {
       for (cp = ttp->len > 1 ? ttp->item[random() % ttp->len] :
            *ttp->item;*cp;++cp) {
-	buffer[pos] = *cp;
-	pos++;
+	putc(*cp, stdout);
       }
-      buffer[pos] = ' ';
-      pos++;
+      putc(' ', stdout);
    }
-   buffer[pos] = '\0';
-
-   puts(buffer);
-
+   putc('\n', stdout);
    return(0);
 }
