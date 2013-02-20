@@ -1,8 +1,6 @@
-/*sex.c*/
-
 /*
 * 
-*	 Copyright (C) 2012 Jan Brennen <jan@janpaal.com>
+*	 Copyright (C) 2012 Jan Brennen
 * 
 * Everyone is permitted to copy and distribute verbatim or modified
 * copies of this license document, and changing it is allowed as long
@@ -30,7 +28,7 @@ static char     *faster[] = {
   "\"Again!\"",                           "\"Faster!\"",
   "\"Harder!\"",                          "\"Help!\"",
   "\"Fuck me harder!\"",                  "\"Is it in yet?\"",
-  "\"You aren't my father!\"",            "\"Doctor, that's not *my* shou\"",
+  "\"You aren't my father!\"",            "\"Doctor, that's not *my* shoulder\"",
   "\"No, no, do the goldfish!\"",         "\"Holy Batmobile, Batman!\"",
   "\"He's dead, he's dead!\"",            "\"Take me, Robert!\"",
   "\"I'm a Republican!\"",                "\"Put four fingers in!\"",
@@ -82,7 +80,7 @@ static char     *female[] = {
 };
 
 static char     *asthe[] = {
-        "as the",
+        "as the", "while the"
 };
 
 static char     *madjec[] = {
@@ -120,7 +118,7 @@ static char     *diddled[] = {
 };
 
 char *her[] = {
-        "her",
+        "her", "its"
 };
 
 static char     *titadj[] = {
@@ -162,7 +160,7 @@ static char     *thrust[] = {
 };
 
 static char     *his[] = {
-        "his",
+        "his", "its"
 };
 
 static char     *dongadj[] = {
